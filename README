@@ -1,0 +1,20 @@
+Hi!
+
+How to install :
+1. Extract Symfony Standart 2.0.1 without vendors http://symfony.com/download
+2. Install vendors, php bin/vendors install
+3. Register Bundle to Kernel
+   - new ZK\EmployeeBundle\ZKEmployeeBundle(),
+4. Create database and schema in file /app/AppKernel.php
+   - php app/console doctrine:database:create
+   - php app/console doctrine:schema:update --dump-sql
+   - php app/console doctrine:schema:update --force
+5. Enable routing configuration in file /app/config/routing.yml
+   - _employee:
+       resource: "@ZKEmployeeBundle/Controller/EmployeeController.php"
+       type:     annotation
+6. Refresh asset folder, php app/console assets:install web/
+7. Enjoy, app_dev.php/employee/
+
+BR,
+Neki Arismi
