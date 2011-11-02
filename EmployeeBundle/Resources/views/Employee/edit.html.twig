@@ -1,0 +1,116 @@
+{% extends 'ZKEmployeeBundle::layout.html.twig' %}
+
+{% block title parent() ~ " - Tambah Pegawai" %}
+
+{% block body %}
+
+<h2>Input Data Pegawai</h2>
+
+<form method="post" action="{{ app.request.requestUri }}" {{ form_enctype(form) }}>
+<ul>
+    <li>
+        {{ form_label(form.pi_no, 'NIK') }}
+        {{ form_errors(form.pi_no) }}
+        {{ form_widget(form.pi_no) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_nama_lengkap, 'Nama Lengkap') }}
+        {{ form_errors(form.pi_nama_lengkap) }}
+        {{ form_widget(form.pi_nama_lengkap) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_nama_kecil, 'Nama Kecil') }}
+        {{ form_errors(form.pi_nama_kecil) }}
+        {{ form_widget(form.pi_nama_kecil) }}
+    </li>
+
+    <li>
+        {{ form_label(form.pi_jenis_kelamin, 'Jenis Kelamin') }}
+        {{ form_errors(form.pi_jenis_kelamin) }}
+        {{ form_widget(form.pi_jenis_kelamin) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_tempat_lahir, 'Tempat, Tanggal Lahir') }}
+        {{ form_errors(form.pi_tempat_lahir) }}
+        {{ form_widget(form.pi_tempat_lahir) }} ,  
+        {{ form_errors(form.pi_tanggal_lahir) }}
+        {{ form_widget(form.pi_tanggal_lahir) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_no_telepon1, 'No Telepon') }}
+        {{ form_errors(form.pi_no_telepon1) }}
+        {{ form_widget(form.pi_no_telepon1) }} , 
+        {{ form_errors(form.pi_no_telepon2) }}
+        {{ form_widget(form.pi_no_telepon2) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_email, 'Email') }}
+        {{ form_errors(form.pi_email) }}
+        {{ form_widget(form.pi_email) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_alamat, 'Alamat') }}
+        {{ form_errors(form.pi_alamat) }}
+        {{ form_widget(form.pi_alamat) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_status_nikah, 'Status Pernikahan') }}
+        {{ form_errors(form.pi_status_nikah) }}
+        {{ form_widget(form.pi_status_nikah) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_jumlah_anak, 'Jumlah Anak') }}
+        {{ form_errors(form.pi_jumlah_anak) }}
+        {{ form_widget(form.pi_jumlah_anak) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_kewarganegaraan, 'Kewarganegaraan') }}
+        {{ form_errors(form.pi_kewarganegaraan) }}
+        {{ form_widget(form.pi_kewarganegaraan) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_suku, 'Suku') }}
+        {{ form_errors(form.pi_suku) }}
+        {{ form_widget(form.pi_suku) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_no_ktp, 'No KTP') }}
+        {{ form_errors(form.pi_no_ktp) }}
+        {{ form_widget(form.pi_no_ktp) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_no_sim, 'No SIM') }}
+        {{ form_errors(form.pi_no_sim) }}
+        {{ form_widget(form.pi_no_sim) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_no_jamsostek, 'No Jamsostek') }}
+        {{ form_errors(form.pi_no_jamsostek) }}
+        {{ form_widget(form.pi_no_jamsostek) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_status_pajak, 'Status Pajak') }}
+        {{ form_errors(form.pi_status_pajak) }}
+        {{ form_widget(form.pi_status_pajak) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_npwp, 'No NPWP') }}
+        {{ form_errors(form.pi_npwp) }}
+        {{ form_widget(form.pi_npwp) }}
+    </li>
+    <li>
+        {{ form_label(form.pi_foto, 'Foto') }}
+        {{ form_errors(form.pi_foto) }}
+        {{ form_widget(form.pi_foto) }}
+    </li>
+
+    <li class="form_handle">
+        <input type="submit" name="save" value="Save Data Employee" class="awesome medium blue" />
+        <a href="http://localhost/idc-ci/employee/employee/index" class="awesome medium red">Cancel Save</a>
+    </li>
+</ul>
+</form>
+
+</form>
+
+{% endblock %}

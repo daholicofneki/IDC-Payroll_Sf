@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title "HRM" %}</title>
+        {% block stylesheets %}
+		<link href="{{ asset('bundles/static/css/screen.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/static/css/style.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/static/css/jquery-ui-1.8.16.custom.css.css') }}" type="text/css" rel="stylesheet" />
+	{% endblock %}
+        {% block javascripts %}
+		<script src="{{ asset('bundles/static/js/jquery-1.6.2.min.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('bundles/static/js/jquery-ui-1.8.16.custom.min.js') }}" type="text/javascript"></script>
+	{% endblock %}
+</head>
+<body>
+<header>
+	<div class="container">
+		<div class="span-14">
+			<a href="#"><h3>HR &amp; Payroll Management System</h3></a>
+		</div>
+		<div class="span-10 last nq_status">
+			Sign in as <a href="#">daholicofneki</a> | <a href="#">Sign Out</a>
+		</div>
+		<div class="span-24 last navbar">        
+		    <ul class="nq_menu-nav">
+			<li><a href="#">Setup</a></li>
+			<li><a href="#">Sallary</a></li>
+			<li><a href="#">Time &amp; Absence</a></li>
+			<li><a href="#">Employee</a></li>
+		    </ul>
+		</div>
+        </div>
+</header>
+<div class="container">
+	<div class="span-6">
+		<ul class="nq_menu-left">
+		    <li>
+			<h3 class="group">Data Personal</h3>
+			<ul>
+			    <li><a href="{{ path("zk_employee_employee_create"  ) }}">Tambah Pegawai</a></li>
+			    <li class="current"><a href="{{ path("zk_employee_employee_list"  ) }}">Daftar</a></li>
+			</ul>
+		    </li>
+		    <li>
+			<h3 class="group">Riwayat Pekerjaan</h3>
+			<ul>
+                            <li><a href="#">Tambah Pekerjaan</a></li>
+			    <li><a href="#">Daftar</a></li>
+			</ul>
+		    </li>
+		    </li>
+		</ul>
+	</div>
+	<div class="span-18 last">
+		<div class="nq_breadcumb">{# <?php echo $breadcrumbs?> #}</div>
+		{% block body %}{% endblock %}
+	</div>
+	<hr class="space">
+</div>
+<footer>
+	<div class="container">
+		<div class="span-24 last">@2011 PT. Samudia Bahtera</div>
+	</div>	
+</footer>
+</body>
+</html>

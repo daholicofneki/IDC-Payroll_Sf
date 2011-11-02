@@ -1,0 +1,84 @@
+<?php
+namespace ZK\EmployeeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="tb_pegawai")
+ */
+class Pegawai
+{
+    /**
+     * @var string $pi_no
+     * 
+     * @ORM\Id
+     * @ORM\Column(type="string" , length=6, unique=true)
+    */
+    protected $pi_no;
+
+    /**
+     * @var string $pi_nama_lengkap
+     * 
+     * @ORM\Column(type="string", length=64)
+    */
+    protected $pi_nama_lengkap;
+
+    /**
+     * @var string $pi_nama_kecil
+     * 
+     * @ORM\Column(type="string", length=16)
+    */
+    protected $pi_nama_kecil;
+
+    /**
+     * @var string $pi_jenis_kelamin
+     * 
+     * @ORM\Column(type="string", length=1)
+    */
+    protected $pi_jenis_kelamin;
+
+    /**
+     * @var string $pi_tempat_lahir
+     * 
+     * @ORM\Column(type="string", length=16)
+    */
+    protected $pi_tempat_lahir;
+
+    /**
+     * @var date $pi_tanggal_lahir
+     * 
+     * @ORM\Column(type="date")
+    */
+    protected $pi_tanggal_lahir;
+
+    /**
+     * @var string $pi_no_telepon1
+     * 
+     * @ORM\Column(type="string", length=16)
+    */
+    protected $pi_no_telepon1;
+
+    /**
+     * @var string $pi_no_telepon2
+     * 
+     * @ORM\Column(type="string", length=16, nullable=true)
+    */
+    protected $pi_no_telepon2;
+
+    /**
+     * @var string $pi_email
+     * 
+     * @ORM\Column(type="string", length=24)
+    */
+    protected $pi_email;
+
+    /**
+     * @var string $pi_alamat
+     * 
+     * @ORM\Column(type="text")
+    */
+    protected $pi_alamat;
+
+
+}

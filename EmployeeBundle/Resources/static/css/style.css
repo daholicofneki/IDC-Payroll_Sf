@@ -1,0 +1,163 @@
+/*
+@Author : Neki Arismi
+@E-mail : neki.arismi@gmail.com
+*/
+
+a { text-decoration:none }
+
+header {
+	background-image:url(../image/dotted.gif);
+	background-repeat:repeat-x;
+	background-position:left bottom;
+	padding-bottom:1px;
+	padding-top:10px;
+}
+
+footer {
+	background-image:url(../image/dotted.gif);
+	background-repeat:repeat-x;
+	background-position:left top;
+	padding-top:10px;
+}
+
+footer div div { font-size:11px; }
+
+header a h3 {
+	text-align: left;
+	top:auto;
+	font-size:18px;
+	font-weight:bold;
+}
+
+header a:hover h3 {
+	color:#4183C4;
+}
+
+
+header .nq_status {
+	text-align: right;
+	top:auto;
+}
+
+ul.nq_menu-nav				{ padding:0 0 1px 0; list-style:none; float:left; }
+ul.nq_menu-nav li			{ list-style:none; float:right; }
+ul.nq_menu-nav li a 			{ padding:10px 20px 5px 5px; font-size:13px; font-weight:bold; }
+ul.nq_menu-nav li a:hover		{}
+
+ul.nq_menu-left, ul.nq_menu-left ul	{ list-style:none; margin:10px 0; padding:0; }
+ul.nq_menu-left li 			{}
+ul.nq_menu-left ul 			{ margin:9px 0 27px; }
+ul.nq_menu-left li a.group		{}
+ul.nq_menu-left li h3.group 		{ border-bottom:1px solid #DDDDDD; color:#333333; display:block; font-size:13px; font-weight:bold; margin-right:30px; padding:0 0 8px; text-decoration:none; }
+ul.nq_menu-left li li 			{ list-style:none; margin:0; padding:0; }
+ul.nq_menu-left li li a 		{ -moz-border-radius:3px; color:#777777; display:block; margin:0 30px 1px 0; padding:4px 15px; text-decoration:none; }
+ul.nq_menu-left li li a:hover 		{ -moz-background-clip:border; -moz-background-inline-policy:continuous; -moz-background-origin:padding; background:#EEEEEE none repeat scroll 0 0; }
+ul.nq_menu-left li li.current a 	{ -moz-background-clip:border; -moz-background-inline-policy:continuous; -moz-background-origin:padding; background:transparent url(../image/active-item.gif) no-repeat scroll 0 0; color:#FFFFFF; font-weight:bold; margin-right:0; text-shadow:0 -1px 1px rgba(0, 0, 0, 0.15); }
+
+
+.nq_breadcumb {
+	font-family:'Arial';
+	font-size:11px;
+	color:#666;
+	margin:10px 0;
+}
+
+
+/* Form */ 
+form { margin: 10px 0;}
+form ul { padding-top: 10px} 
+form ul li { list-style : none; min-height: 33px; display: block; margin:3px 0; padding:0;}
+form ul li label { width : 150px; float: left;}
+form ul li span.hint {
+		position: absolute;
+		font-size:11px;
+		min-height:25px;
+		right: 20px;
+		z-index:1;
+		width: 200px;
+		margin-top: -4px;
+		border: 1px solid #c93;
+		padding: 4px 6px;
+		background: #ffc url(../image/pointer.gif) no-repeat -10px 5px;
+		box-shadow: 0 0 8px #D0D0D0;
+		-webkit-box-shadow: 0 0 8px #D0D0D0;
+		-moz-box-shadow: 0 0 8px #D0D0D0;}
+form ul li span.hint .hint-pointer{ position: absolute; left: -10px; top: 5px; width: 10px; height: 19px; background: url(../image/pointer.gif) left top no-repeat;}
+form ul li.form_handle { margin-top:15px; border-top: 1px solid #DDD; padding: 10px;}
+
+label { font-weight:normal; padding:5px; }
+
+input[type=text], input[type=password],
+input.text, input.title,
+textarea {
+  background:#fff url(../image/input-bg.png) no-repeat top;
+  border:1px solid #bbb;
+  font-weight: inherit;
+}
+input[type=text]:hover, input[type=password]:hover,
+input.text:hover, input.title:hover,
+textarea:hover {
+  border-color:#666;
+}
+input[type=text]:focus, input[type=password]:focus,
+input.text:focus, input.title:focus,
+textarea:focus {
+  border-color:#4D90FE;
+}
+select {  background:#fff url(../image/input-bg.png) no-repeat top;border:1px solid #bbb;}
+select:hover {border-color:#666;}
+select option { padding-left:5px;}
+
+input[type=text], input[type=password],
+input.text, input.title,
+textarea, select {
+  margin:0.2em 0; padding:2px;
+}
+
+
+
+input[type=text].hint, input[type=password].hint,
+input.text.hint, input.title.hint,
+textarea.hint {border-color: #DD4B39; }
+
+
+
+/*
+ Button
+ http://www.zurb.com/blog_uploads/0000/0617/buttons-03.html
+ */
+
+.awesome, .awesome:visited {
+	background: #222 url(/images/alert-overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+}
+
+.awesome:hover						{ background-color: #111; color: #fff; }
+.awesome:active						{ top: 1px; }
+.small.awesome, .small.awesome:visited			{ font-size: 11px; padding: 0px; }
+.awesome, .awesome:visited,
+.medium.awesome, .medium.awesome:visited		{ font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
+.large.awesome, .large.awesome:visited			{ font-size: 14px; padding: 8px 14px 9px; }
+.green.awesome, .green.awesome:visited			{ background-color: #91bd09; }
+.green.awesome:hover					{ background-color: #749a02; }
+.blue.awesome, .blue.awesome:visited			{ background-color: #2daebf; }
+.blue.awesome:hover					{ background-color: #007d9a; }
+.red.awesome, .red.awesome:visited			{ background-color: #e33100; }
+.red.awesome:hover					{ background-color: #872300; }
+.magenta.awesome, .magenta.awesome:visited		{ background-color: #a9014b; }
+.magenta.awesome:hover					{ background-color: #630030; }
+.orange.awesome, .orange.awesome:visited		{ background-color: #ff5c00; }
+.orange.awesome:hover					{ background-color: #d45500; }
+.yellow.awesome, .yellow.awesome:visited		{ background-color: #ffb515; }
+.yellow.awesome:hover					{ background-color: #fc9200; }

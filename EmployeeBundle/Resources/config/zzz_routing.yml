@@ -1,0 +1,9 @@
+#employee:
+#    pattern:  /employee
+#    defaults: { _controller: ZKEmployeeBundle:Employee:list }
+
+#employee_add:
+#    pattern:  /employee/{page}
+#    defaults: { _controller: ZKEmployeeBundle:Employee:add, page:add }
+#    requirements:
+#        page: add
