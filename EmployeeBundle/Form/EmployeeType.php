@@ -18,10 +18,10 @@ class EmployeeType extends AbstractType
                 'choices'   => array('P' => 'Pria', 'W' => 'Wanita')
             ));
         $builder->add('pi_tempat_lahir', 'text');
-        $builder->add('pi_tanggal_lahir', 'date', array(
+        /*$builder->add('pi_tanggal_lahir', 'date', array(
                 'input'  => 'timestamp',
                 'widget' => 'choice'
-            ));
+            ));*/
         $builder->add('pi_no_telepon1', 'text');
         $builder->add('pi_no_telepon2', 'text');
         $builder->add('pi_email', 'email');
@@ -39,7 +39,7 @@ class EmployeeType extends AbstractType
                 'choices'   => array('TK0' => 'TK0', 'K0' => 'K0', 'K1'=>'K1', 'K2'=>'K2')
             ));
         $builder->add('pi_npwp', 'text');
-        $builder->add('pi_foto', 'file');
+        $builder->add('pi_foto', 'text');
     }
 
     public function getName()

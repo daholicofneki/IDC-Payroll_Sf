@@ -12,13 +12,20 @@
             <th>NIP</th>
             <th>Nama</th>
             <th>Umur</th>
-            <th>JK/Status</th>
+            <th>Sex / Status</th>
             <th>No. Telepon</th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
+{% for peg in pegawais %}
+        <tr>
+            <td><a href="{{ path("zk_employee_employee_update", {"id": peg.id}) }}">{{ peg.piNo }}</a></td>
+            <td>{{ peg.piNamaLengkap }}</td>
+            <td></td>
+            <td>{{ peg.piJenisKelamin }} / {{ peg.piStatusNikah }}</td>
+            <td>{{ peg.piNoTelepon1 }}</td>
+        </tr>
+{% endfor %}
     </tbody>
 </table>
-
 {% endblock %}

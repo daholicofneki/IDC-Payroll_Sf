@@ -13,7 +13,15 @@ use
 class Pegawai
 {
     /**
+     * @ORM\Column(type="integer")
      * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * 
+     * @var integer
+     */
+    protected $id;
+
+    /**
      * @ORM\Column(type="string" , length=6, unique=true)
      *
      * @var string $pi_no
@@ -42,14 +50,14 @@ class Pegawai
     protected $pi_jenis_kelamin;
 
     /**
-     * @ORM\Column(type="string", length=16)
+     * @ORM\Column(type="string", length=16, nullable=true)
      *
      * @var string $pi_tempat_lahir
     */
     protected $pi_tempat_lahir;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      *
      * @var date $pi_tanggal_lahir
     */
@@ -119,14 +127,14 @@ class Pegawai
     protected $pi_no_ktp;
 
     /**
-     * @ORM\Column(type="string", length=24)
+     * @ORM\Column(type="string", length=24, nullable=true)
      *
      * @var string $pi_no_sim
     */
     protected $pi_no_sim;
 
     /**
-     * @ORM\Column(type="string", length=24)
+     * @ORM\Column(type="string", length=24, nullable=true)
      *
      * @var string $pi_no_jamsostek
     */
@@ -140,7 +148,7 @@ class Pegawai
     protected $pi_status_pajak;
 
     /**
-     * @ORM\Column(type="string", length=16)
+     * @ORM\Column(type="string", length=16, nullable=true)
      *
      * @var string $pi_npwp
     */
@@ -189,19 +197,39 @@ class Pegawai
     protected $pi_riwayat_pekerjaan;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      *
      * @var string $pi_lastupdated_by_account
     */
     protected $pi_lastupdated_by_account;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      *
      * @var datetime $pi_lastupdated_timestamp
     */
     protected $pi_lastupdated_timestamp;
 
+    /**
+     * Set id
+     *
+     * @param integer $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+ 
     /**
      * Set pi_no
      *

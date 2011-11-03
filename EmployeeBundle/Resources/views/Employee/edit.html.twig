@@ -7,6 +7,8 @@
 <h2>Input Data Pegawai</h2>
 
 <form method="post" action="{{ app.request.requestUri }}" {{ form_enctype(form) }}>
+    {{ form_errors(form) }} 
+
 <ul>
     <li>
         {{ form_label(form.pi_no, 'NIK') }}
@@ -33,8 +35,6 @@
         {{ form_label(form.pi_tempat_lahir, 'Tempat, Tanggal Lahir') }}
         {{ form_errors(form.pi_tempat_lahir) }}
         {{ form_widget(form.pi_tempat_lahir) }} ,  
-        {{ form_errors(form.pi_tanggal_lahir) }}
-        {{ form_widget(form.pi_tanggal_lahir) }}
     </li>
     <li>
         {{ form_label(form.pi_no_telepon1, 'No Telepon') }}
@@ -109,6 +109,8 @@
         <a href="http://localhost/idc-ci/employee/employee/index" class="awesome medium red">Cancel Save</a>
     </li>
 </ul>
+
+    {{ form_rest(form) }}
 </form>
 
 </form>
