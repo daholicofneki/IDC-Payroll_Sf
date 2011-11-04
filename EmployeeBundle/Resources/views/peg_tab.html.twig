@@ -1,0 +1,16 @@
+{% extends 'ZKEmployeeBundle::layout.html.twig' %}
+
+{% block body %}
+<div id="more_info">
+	<ul>
+		<li><a href="#info-1">Personal</a></li>
+		<li><a href="#info-2">Keluarga</a></li>
+		<li><a href="#info-3">Formal</a></li>
+		<li><a href="#info-4">Informal</a></li>
+		<li><a href="#info-5">Bahasa</a></li>
+		<li><a href="#info-6">Riwayat Pekerjaan</a></li>
+	</ul>
+        {% block content %}{% endblock %}
+</div>
+
+{% endblock %}

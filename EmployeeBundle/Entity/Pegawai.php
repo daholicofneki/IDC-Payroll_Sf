@@ -22,63 +22,63 @@ class Pegawai
     protected $id;
 
     /**
-     * @ORM\Column(type="string" , length=6, unique=true)
+     * @ORM\Column(type="string" , length="6", unique=true)
      *
      * @var string $pi_no
     */
     protected $pi_no;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length="64")
      *
      * @var string $pi_nama_lengkap
     */
     protected $pi_nama_lengkap;
 
     /**
-     * @ORM\Column(type="string", length=16)
+     * @ORM\Column(type="string", length="16")
      *
      * @var string $pi_nama_kecil
     */
     protected $pi_nama_kecil;
 
     /**
-     * @ORM\Column(type="string", length=1)
+     * @ORM\Column(type="string", length="1")
      *
      * @var string $pi_jenis_kelamin
     */
     protected $pi_jenis_kelamin;
 
     /**
-     * @ORM\Column(type="string", length=16, nullable=true)
+     * @ORM\Column(type="string", length="16", nullable=true)
      *
      * @var string $pi_tempat_lahir
     */
     protected $pi_tempat_lahir;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="string", length="10" , nullable=true)
      *
      * @var date $pi_tanggal_lahir
     */
     protected $pi_tanggal_lahir;
 
     /**
-     * @ORM\Column(type="string", length=16)
+     * @ORM\Column(type="string", length="16")
      *
      * @var string $pi_no_telepon1
     */
     protected $pi_no_telepon1;
 
     /**
-     * @ORM\Column(type="string", length=16, nullable=true)
+     * @ORM\Column(type="string", length="16", nullable=true)
      *
      * @var string $pi_no_telepon2
     */
     protected $pi_no_telepon2;
 
     /**
-     * @ORM\Column(type="string", length=24, nullable=true)
+     * @ORM\Column(type="string", length="24", nullable=true)
      *
      * @var string $pi_email
     */
@@ -92,7 +92,7 @@ class Pegawai
     protected $pi_alamat;
 
     /**
-     * @ORM\Column(type="string", length=1)
+     * @ORM\Column(type="string", length="1")
      *
      * @var string $pi_status_nikah
     */
@@ -106,56 +106,56 @@ class Pegawai
     protected $pi_jumlah_anak;
 
     /**
-     * @ORM\Column(type="string", length=16)
+     * @ORM\Column(type="string", length="16")
      *
      * @var string $pi_kewarganegaraan
     */
     protected $pi_kewarganegaraan;
 
     /**
-     * @ORM\Column(type="string", length=16)
+     * @ORM\Column(type="string", length="16")
      *
      * @var string $pi_suku
     */
     protected $pi_suku;
 
     /**
-     * @ORM\Column(type="string", length=24)
+     * @ORM\Column(type="string", length="24")
      *
      * @var string $pi_no_ktp
     */
     protected $pi_no_ktp;
 
     /**
-     * @ORM\Column(type="string", length=24, nullable=true)
+     * @ORM\Column(type="string", length="24", nullable=true)
      *
      * @var string $pi_no_sim
     */
     protected $pi_no_sim;
 
     /**
-     * @ORM\Column(type="string", length=24, nullable=true)
+     * @ORM\Column(type="string", length="24", nullable=true)
      *
      * @var string $pi_no_jamsostek
     */
     protected $pi_no_jamsostek;
 
     /**
-     * @ORM\Column(type="string", length=3)
+     * @ORM\Column(type="string", length="3")
      *
      * @var string $pi_status_pajak
     */
     protected $pi_status_pajak;
 
     /**
-     * @ORM\Column(type="string", length=16, nullable=true)
+     * @ORM\Column(type="string", length="16", nullable=true)
      *
      * @var string $pi_npwp
     */
     protected $pi_npwp;
 
     /**
-     * @ORM\Column(type="string", length=32)
+     * @ORM\Column(type="string", length="32")
      *
      * @var string $pi_foto
     */
@@ -333,7 +333,7 @@ class Pegawai
     /**
      * Set pi_tanggal_lahir
      *
-     * @param date $piTanggalLahir
+     * @param string $piTanggalLahir
      */
     public function setPiTanggalLahir($piTanggalLahir)
     {

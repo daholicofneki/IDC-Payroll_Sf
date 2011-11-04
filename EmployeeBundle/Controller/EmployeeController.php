@@ -7,6 +7,7 @@ use
     Symfony\Component\HttpKernel\Exception\NotFoundHttpException,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Template
+    #Symfony\Component\HttpFoundation\Response
 ;
 
 use
@@ -22,21 +23,12 @@ class EmployeeController extends Controller
 
     /**
      * @Route("/create", name="zk_employee_employee_create"),
-     * @Route("/update/{id}", name="zk_employee_employee_update", requirements={"id" = "\d+"})
      * @Template()
      */
     public function editAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-
-        if (isset($id)) {
-            $pegawai = $em->find('ZKEmployeeBundle:Pegawai', $id);
-            if (!$pegawai) {
-                throw new NotFoundHttpException("Invalid pegawai.");
-            }
-        } else {
-            $pegawai = new Pegawai();
-        }
+        $pegawai = new Pegawai();
 
         $form = $this->createForm(new EmployeeType(), $pegawai);
 
@@ -62,6 +54,30 @@ class EmployeeController extends Controller
     }
 
     /**
+     * @Route("/update/{id}", name="zk_employee_employee_update")
+     * @Template()
+     */
+    public function updateAction($id)
+    {
+        $peg = $this->get('doctrine')->getEntityManager()
+            ->createQuery('SELECT p FROM ZKEmployeeBundle:Pegawai p WHERE p.id = '.$id)
+            ->getResult()
+        ;
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $pegawai = new Pegawai();
+
+        $form = $this->createForm(new EmployeeType(), $pegawai);
+
+        $request = $this->getRequest();
+
+        return array(
+            'form'  => $form->createView(),
+            'peg' => $peg,
+        );
+    }
+
+    /**
      * @Route("/", name="zk_employee_employee_list")
      * @Template()
      */
@@ -75,23 +91,4 @@ class EmployeeController extends Controller
         return array('pegawais' => $pegawais);
     }
 
-    /**
-     * @Route("/delete/{id}", name="zk_employee_employee_delete")
-     * @Template()
-     */
-    public function deleteAction($id)
-    {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $pegawai = $em->find('ZKEmployeeBundle:Pegawai', $id);
-
-        if (!$pegawai) {
-            throw new NotFoundHttpException("Invalid pegawai.");
-        }
-
-        $em->remove($pegawai);
-        $em->flush();
-
-        return $this->redirect($this->generateUrl('zk_employee_employee_list'));
-    }
 }

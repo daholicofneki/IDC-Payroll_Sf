@@ -34,7 +34,10 @@
     <li>
         {{ form_label(form.pi_tempat_lahir, 'Tempat, Tanggal Lahir') }}
         {{ form_errors(form.pi_tempat_lahir) }}
-        {{ form_widget(form.pi_tempat_lahir) }} ,  
+        {{ form_widget(form.pi_tempat_lahir) }} ,
+        {{ form_errors(form.pi_tanggal_lahir) }}
+        {{ form_widget(form.pi_tanggal_lahir) }}
+        
     </li>
     <li>
         {{ form_label(form.pi_no_telepon1, 'No Telepon') }}
@@ -106,13 +109,24 @@
 
     <li class="form_handle">
         <input type="submit" name="save" value="Save Data Employee" class="awesome medium blue" />
-        <a href="http://localhost/idc-ci/employee/employee/index" class="awesome medium red">Cancel Save</a>
+        <a href="{{ path("zk_employee_employee_list") }}" class="awesome medium red">Cancel Save</a>
     </li>
 </ul>
 
     {{ form_rest(form) }}
 </form>
 
-</form>
+<script type="text/javascript">
+    $(document).ready(function(){
+            $(".date").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    dateFormat: 'yy-mm-dd',
+                    minDate: '-100y',
+                    maxDate: '-15y',
+                    showAnim: 'fold'
+            });
+    });
+</script>
 
 {% endblock %}

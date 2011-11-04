@@ -6,7 +6,7 @@
         {% block stylesheets %}
 		<link href="{{ asset('bundles/static/css/screen.css') }}" type="text/css" rel="stylesheet" />
 		<link href="{{ asset('bundles/static/css/style.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/static/css/jquery-ui-1.8.16.custom.css.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/static/css/jquery-ui-1.8.16.custom.css') }}" type="text/css" rel="stylesheet" />
 	{% endblock %}
         {% block javascripts %}
 		<script src="{{ asset('bundles/static/js/jquery-1.6.2.min.js') }}" type="text/javascript"></script>
@@ -38,8 +38,8 @@
 		    <li>
 			<h3 class="group">Data Personal</h3>
 			<ul>
-			    <li><a href="{{ path("zk_employee_employee_create"  ) }}">Tambah Pegawai</a></li>
-			    <li class="current"><a href="{{ path("zk_employee_employee_list"  ) }}">Daftar</a></li>
+			    <li><a href="{{ path("zk_employee_employee_create") }}">Tambah Pegawai</a></li>
+			    <li class="current"><a href="{{ path("zk_employee_employee_list") }}">Daftar</a></li>
 			</ul>
 		    </li>
 		    <li>

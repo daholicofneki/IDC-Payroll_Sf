@@ -1,0 +1,220 @@
+{% extends 'ZKEmployeeBundle::peg_tab.html.twig' %}
+
+{% block title parent() ~ " - Detail Pegawai" %}
+
+{% block content %}
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".date").datepicker({
+			changeMonth: true,
+			changeYear: true,
+			dateFormat: 'yy-mm-dd',
+			minDate: '-100y',
+			maxDate: '-15y',
+			showAnim: 'fold'
+		});
+		$("#more_info").tabs();
+	});
+</script>
+
+	<div id="info-1">
+            <h3>Edit Data Pegawai</h3>
+            <form method="post" action="{{ app.request.requestUri }}" {{ form_enctype(form) }}>
+                {{ form_errors(form) }} 
+            
+            <ul>
+                <li>
+                    {{ form_label(form.pi_no, 'NIK') }}
+                    {{ form_errors(form.pi_no) }}
+                    {{ form_widget(form.pi_no) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_nama_lengkap, 'Nama Lengkap') }}
+                    {{ form_errors(form.pi_nama_lengkap) }}
+                    {{ form_widget(form.pi_nama_lengkap) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_nama_kecil, 'Nama Kecil') }}
+                    {{ form_errors(form.pi_nama_kecil) }}
+                    {{ form_widget(form.pi_nama_kecil) }}
+                </li>
+            
+                <li>
+                    {{ form_label(form.pi_jenis_kelamin, 'Jenis Kelamin') }}
+                    {{ form_errors(form.pi_jenis_kelamin) }}
+                    {{ form_widget(form.pi_jenis_kelamin) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_tempat_lahir, 'Tempat, Tanggal Lahir') }}
+                    {{ form_errors(form.pi_tempat_lahir) }}
+                    {{ form_widget(form.pi_tempat_lahir) }} ,
+                    {{ form_errors(form.pi_tanggal_lahir) }}
+                    {{ form_widget(form.pi_tanggal_lahir) }}
+                    
+                </li>
+                <li>
+                    {{ form_label(form.pi_no_telepon1, 'No Telepon') }}
+                    {{ form_errors(form.pi_no_telepon1) }}
+                    {{ form_widget(form.pi_no_telepon1) }} , 
+                    {{ form_errors(form.pi_no_telepon2) }}
+                    {{ form_widget(form.pi_no_telepon2) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_email, 'Email') }}
+                    {{ form_errors(form.pi_email) }}
+                    {{ form_widget(form.pi_email) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_alamat, 'Alamat') }}
+                    {{ form_errors(form.pi_alamat) }}
+                    {{ form_widget(form.pi_alamat) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_status_nikah, 'Status Pernikahan') }}
+                    {{ form_errors(form.pi_status_nikah) }}
+                    {{ form_widget(form.pi_status_nikah) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_jumlah_anak, 'Jumlah Anak') }}
+                    {{ form_errors(form.pi_jumlah_anak) }}
+                    {{ form_widget(form.pi_jumlah_anak) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_kewarganegaraan, 'Kewarganegaraan') }}
+                    {{ form_errors(form.pi_kewarganegaraan) }}
+                    {{ form_widget(form.pi_kewarganegaraan) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_suku, 'Suku') }}
+                    {{ form_errors(form.pi_suku) }}
+                    {{ form_widget(form.pi_suku) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_no_ktp, 'No KTP') }}
+                    {{ form_errors(form.pi_no_ktp) }}
+                    {{ form_widget(form.pi_no_ktp) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_no_sim, 'No SIM') }}
+                    {{ form_errors(form.pi_no_sim) }}
+                    {{ form_widget(form.pi_no_sim) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_no_jamsostek, 'No Jamsostek') }}
+                    {{ form_errors(form.pi_no_jamsostek) }}
+                    {{ form_widget(form.pi_no_jamsostek) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_status_pajak, 'Status Pajak') }}
+                    {{ form_errors(form.pi_status_pajak) }}
+                    {{ form_widget(form.pi_status_pajak) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_npwp, 'No NPWP') }}
+                    {{ form_errors(form.pi_npwp) }}
+                    {{ form_widget(form.pi_npwp) }}
+                </li>
+                <li>
+                    {{ form_label(form.pi_foto, 'Foto') }}
+                    {{ form_errors(form.pi_foto) }}
+                    {{ form_widget(form.pi_foto) }}
+                </li>
+
+                <li class="form_handle">
+                    <input type="submit" name="save" value="Save Data Employee" class="awesome medium blue" />
+                    <a href="{{ path("zk_employee_employee_list") }}" class="awesome medium red">Cancel Save</a>
+                </li>
+
+                {{ form_rest(form) }}
+            </form>
+	</ul>
+	</div>
+	<div id="info-2">
+		<h3>Informasi Keluarga</h3>
+		<table>
+			<thead>
+			<tr>
+				<th>Nama</th>
+				<th>Jenis Kelamin</th>
+				<th>Umur</th>
+				<th>Hubungan</th>
+				<th>Pendidikan</th>
+				<th>Pekerjaan</th>
+				<th width="10px">+</th>
+			</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div id="info-3">
+		<h3 id="method">Informasi Pendidikan Formal</h3>
+		<table>
+			<thead>
+			<tr>
+				<th>Tingkat</th>
+				<th>Nama Sekolah</th>
+				<th>Tahun Lulus</th>
+				<th>Jurusan</th>
+				<th>Sertifikat</th>
+				<th width="10px">+</th>
+			</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div id="info-4">
+		<h3 id="method">Informasi Pendidikan Informal</h3>
+		<table>
+			<thead>
+			<tr>
+				<th>Jenis Kursus</th>
+				<th>Lembaga</th>
+				<th>Kualifikasi</th>
+				<th>Tahun</th>
+				<th width="10px">+</th>
+			</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div id="info-5">
+		<h3 id="method">Informasi Bahasa</h3>
+		<table>
+			<thead>
+			<tr>
+				<th>Bahasa</th>
+				<th>Nilai Bicara</th>
+				<th>Nilai Membaca</th>
+				<th>Nilai Menulis</th>
+				<th width="10px">+</th>
+			</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<div id="info-6">
+		<h3 id="method">Informasi Riwayat Pekerjaan</h3>
+		<table>
+			<thead>
+			<tr>
+				<th>Nama Perusahaan</th>
+				<th>Dari</th>
+				<th>Sampai</th>
+				<th>Jabatan</th>
+				<th>Pekerjaan</th>
+				<th>Gaji</th>
+				<th width="10px">+</th>
+			</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+{% endblock %}

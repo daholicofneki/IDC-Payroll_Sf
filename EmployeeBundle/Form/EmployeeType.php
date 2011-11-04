@@ -18,10 +18,12 @@ class EmployeeType extends AbstractType
                 'choices'   => array('P' => 'Pria', 'W' => 'Wanita')
             ));
         $builder->add('pi_tempat_lahir', 'text');
-        /*$builder->add('pi_tanggal_lahir', 'date', array(
-                'input'  => 'timestamp',
-                'widget' => 'choice'
-            ));*/
+        $builder->add('pi_tanggal_lahir', 'date', array(
+                'attr' => array('class' => 'date'),
+                'widget' => 'single_text',
+                'input' => 'string',
+                'format' => 'dd/MM/yy',
+            ));
         $builder->add('pi_no_telepon1', 'text');
         $builder->add('pi_no_telepon2', 'text');
         $builder->add('pi_email', 'email');
