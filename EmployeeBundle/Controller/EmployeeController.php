@@ -59,21 +59,31 @@ class EmployeeController extends Controller
      */
     public function updateAction($id)
     {
-        $peg = $this->get('doctrine')->getEntityManager()
-            ->createQuery('SELECT p FROM ZKEmployeeBundle:Pegawai p WHERE p.id = '.$id)
-            ->getResult()
-        ;
 
         $em = $this->getDoctrine()->getEntityManager();
-        $pegawai = new Pegawai();
+
+        $pegawai = $em->find('ZKEmployeeBundle:Pegawai', $id);
 
         $form = $this->createForm(new EmployeeType(), $pegawai);
 
         $request = $this->getRequest();
 
+        if ('POST' === $request->getMethod()) {
+            $form->bindRequest($request);
+
+            if ($form->isValid()) {
+                $em->persist($pegawai);
+                $em->flush();
+
+                $this->get('session')->setFlash('success', 'New pizza was saved!');
+
+                return $this->redirect($this->generateUrl('zk_employee_employee_update', array('id' => $id)));
+            }
+        }
+
         return array(
             'form'  => $form->createView(),
-            'peg' => $peg,
+            'pegawai' => $pegawai,
         );
     }
 
