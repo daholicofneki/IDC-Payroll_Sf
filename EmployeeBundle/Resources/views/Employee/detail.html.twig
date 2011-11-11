@@ -1,0 +1,202 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+{% if info == 2 %}
+<h3>Informasi Keluarga</h3>
+<form method="post" action="{{ app.request.requestUri }}" {{ form_enctype(form) }}>
+{{ form_errors(form) }} 
+<ul>
+    <li>
+        {{ form_label(form.pi1_nama, 'Nama Lengkap') }}
+        {{ form_errors(form.pi1_nama) }}
+        {{ form_widget(form.pi1_nama) }}
+    </li>
+    <li>
+        {{ form_label(form.pi1_jenis_kelamin, 'Jenis Kelamin') }}
+        {{ form_errors(form.pi1_jenis_kelamin) }}
+        {{ form_widget(form.pi1_jenis_kelamin) }}
+    </li>
+    <li>
+        {{ form_label(form.pi1_umur, 'Umur') }}
+        {{ form_errors(form.pi1_umur) }}
+        {{ form_widget(form.pi1_umur) }}
+    </li>
+    <li>
+        {{ form_label(form.pi1_hubungan_keluarga, 'Hubungan Keluarga') }}
+        {{ form_errors(form.pi1_hubungan_keluarga) }}
+        {{ form_widget(form.pi1_hubungan_keluarga) }}
+    </li>
+    <li>
+        {{ form_label(form.pi1_pendidikan, 'Pendidikan') }}
+        {{ form_errors(form.pi1_pendidikan) }}
+        {{ form_widget(form.pi1_pendidikan) }}
+    </li>
+    <li>
+        {{ form_label(form.pi1_pekerjaan, 'Pekerjaan') }}
+        {{ form_errors(form.pi1_pekerjaan) }}
+        {{ form_widget(form.pi1_pekerjaan) }}
+    </li>
+
+    <li class="form_handle">
+        <input type="submit" name="save" value="Save" class="awesome medium blue" />
+        <a href="{{ path("zk_employee_employee_update", {"id": id }) }}" class="awesome medium red">Cancel Save</a>
+    </li>
+
+    {{ form_rest(form) }}
+</form>
+
+{% elseif info == 3 %}
+<h3>Informasi Pendidikan Formal</h3>
+<form method="post" action="{{ app.request.requestUri }}" {{ form_enctype(form) }}>
+{{ form_errors(form) }} 
+<ul>
+    <li>
+        {{ form_label(form.pi2_tingkat, 'Tingkat') }}
+        {{ form_errors(form.pi2_tingkat) }}
+        {{ form_widget(form.pi2_tingkat) }}
+    </li>
+    <li>
+        {{ form_label(form.pi2_nama_sekolah, 'Jenis Kelamin') }}
+        {{ form_errors(form.pi2_nama_sekolah) }}
+        {{ form_widget(form.pi2_nama_sekolah) }}
+    </li>
+    <li>
+        {{ form_label(form.pi2_tahun_lulus, 'Tahun Lulus') }}
+        {{ form_errors(form.pi2_tahun_lulus) }}
+        {{ form_widget(form.pi2_tahun_lulus) }}
+    </li>
+    <li>
+        {{ form_label(form.pi2_jurusan, 'Jurusan') }}
+        {{ form_errors(form.pi2_jurusan) }}
+        {{ form_widget(form.pi2_jurusan) }}
+    </li>
+    <li>
+        {{ form_label(form.pi2_sertifikat, 'Sertifikat') }}
+        {{ form_errors(form.pi2_sertifikat) }}
+        {{ form_widget(form.pi2_sertifikat) }}
+    </li>
+
+    <li class="form_handle">
+        <input type="submit" name="save" value="Save" class="awesome medium blue" />
+        <a href="{{ path("zk_employee_employee_update", {"id": id }) }}" class="awesome medium red">Cancel Save</a>
+    </li>
+
+    {{ form_rest(form) }}
+</form>
+
+{% elseif info == 4 %}
+<h3>Informasi Pendidikan Informal</h3>
+<form method="post" action="{{ app.request.requestUri }}" {{ form_enctype(form) }}>
+{{ form_errors(form) }} 
+<ul>
+    <li>
+        {{ form_label(form.pi3_jenis_kursus, 'Jenis Kursus') }}
+        {{ form_errors(form.pi3_jenis_kursus) }}
+        {{ form_widget(form.pi3_jenis_kursus) }}
+    </li>
+    <li>
+        {{ form_label(form.pi3_lembaga, 'Lembaga') }}
+        {{ form_errors(form.pi3_lembaga) }}
+        {{ form_widget(form.pi3_lembaga) }}
+    </li>
+    <li>
+        {{ form_label(form.pi3_kualifikasi, 'Kualifikasi') }}
+        {{ form_errors(form.pi3_kualifikasi) }}
+        {{ form_widget(form.pi3_kualifikasi) }}
+    </li>
+    <li>
+        {{ form_label(form.pi3_tahun, 'Tahun') }}
+        {{ form_errors(form.pi3_tahun) }}
+        {{ form_widget(form.pi3_tahun) }}
+    </li>
+
+    <li class="form_handle">
+        <input type="submit" name="save" value="Save" class="awesome medium blue" />
+        <a href="{{ path("zk_employee_employee_update", {"id": id }) }}" class="awesome medium red">Cancel Save</a>
+    </li>
+
+    {{ form_rest(form) }}
+</form>
+
+{% elseif info == 5 %}
+<h3>Informasi Bahasa</h3>
+<form method="post" action="{{ app.request.requestUri }}" {{ form_enctype(form) }}>
+{{ form_errors(form) }} 
+<ul>
+    <li>
+        {{ form_label(form.pi4_bahasa, 'Bahasa') }}
+        {{ form_errors(form.pi4_bahasa) }}
+        {{ form_widget(form.pi4_bahasa) }}
+    </li>
+    <li>
+        {{ form_label(form.pi4_nilai_bicara, 'Nilai Bicara') }}
+        {{ form_errors(form.pi4_nilai_bicara) }}
+        {{ form_widget(form.pi4_nilai_bicara) }}
+    </li>
+    <li>
+        {{ form_label(form.pi4_nilai_membaca, 'Nilai Membaca') }}
+        {{ form_errors(form.pi4_nilai_membaca) }}
+        {{ form_widget(form.pi4_nilai_membaca) }}
+    </li>
+    <li>
+        {{ form_label(form.pi4_nilai_menulis, 'Nilai Menulis') }}
+        {{ form_errors(form.pi4_nilai_menulis) }}
+        {{ form_widget(form.pi4_nilai_menulis) }}
+    </li>
+
+    <li class="form_handle">
+        <input type="submit" name="save" value="Save" class="awesome medium blue" />
+        <a href="{{ path("zk_employee_employee_update", {"id": id }) }}" class="awesome medium red">Cancel Save</a>
+    </li>
+
+    {{ form_rest(form) }}
+</form>
+
+{% elseif info == 6 %}
+<h3>Informasi Riwayat Pekerjaan</h3>
+<form method="post" action="{{ app.request.requestUri }}" {{ form_enctype(form) }}>
+{{ form_errors(form) }} 
+<ul>
+    <li>
+        {{ form_label(form.pi5_nama_perusahaan, 'Nama Perusahaan') }}
+        {{ form_errors(form.pi5_nama_perusahaan) }}
+        {{ form_widget(form.pi5_nama_perusahaan) }}
+    </li>
+    <li>
+        {{ form_label(form.pi5_dari, 'Dari') }}
+        {{ form_errors(form.pi5_dari) }}
+        {{ form_widget(form.pi5_dari) }}
+    </li>
+    <li>
+        {{ form_label(form.pi5_sampai, 'Sampai') }}
+        {{ form_errors(form.pi5_sampai) }}
+        {{ form_widget(form.pi5_sampai) }}
+    </li>
+    <li>
+        {{ form_label(form.pi5_jabatan, 'Jabatan') }}
+        {{ form_errors(form.pi5_jabatan) }}
+        {{ form_widget(form.pi5_jabatan) }}
+    </li>
+    <li>
+        {{ form_label(form.pi5_pekerjaan, 'Pekerjaan') }}
+        {{ form_errors(form.pi5_pekerjaan) }}
+        {{ form_widget(form.pi5_pekerjaan) }}
+    </li>
+    <li>
+        {{ form_label(form.pi5_gaji, 'Gaji') }}
+        {{ form_errors(form.pi5_gaji) }}
+        {{ form_widget(form.pi5_gaji) }}
+    </li>
+
+    <li class="form_handle">
+        <input type="submit" name="save" value="Save" class="awesome medium blue" />
+        <a href="{{ path("zk_employee_employee_update", {"id": id }) }}" class="awesome medium red">Cancel Save</a>
+    </li>
+
+    {{ form_rest(form) }}
+</form>
+
+{% endif %}
+
+{% endblock %}

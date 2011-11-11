@@ -1,0 +1,164 @@
+<?php
+namespace ZK\EmployeeBundle\Entity;
+
+use
+    Doctrine\ORM\Mapping as ORM,
+    Symfony\Component\Validator\Constraints as Assert
+;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="tb_pegawai_info_bahasa")
+ */
+class Pegawai_Info_Bahasa
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * 
+     * @var integer
+     */
+    protected $id;
+
+    /**
+     * @var $pegawai
+     * 
+     * @ORM\ManyToOne(targetEntity="Pegawai")
+     */
+    protected $pegawai;
+
+    /**
+     * @ORM\Column(type="string" , length="12")
+     *
+     * @var string $pi4_bahasa
+    */
+    protected $pi4_bahasa;
+
+    /**
+     * @ORM\Column(type="smallint", nullable=true)
+     *
+     * @var string $pi4_nilai_bicara
+    */
+    protected $pi4_nilai_bicara;
+
+    /**
+     * @ORM\Column(type="smallint", nullable=true)
+     *
+     * @var string $pi4_nilai_membaca
+    */
+    protected $pi4_nilai_membaca;
+
+    /**
+     * @ORM\Column(type="smallint", nullable=true)
+     *
+     * @var string $pi4_nilai_menulis
+    */
+    protected $pi4_nilai_menulis;
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+ 
+    /**
+     * Set pi4_bahasa
+     *
+     * @param string $pi4Bahasa
+     */
+    public function setPi4Bahasa($pi4Bahasa)
+    {
+        $this->pi4_bahasa = $pi4Bahasa;
+    }
+
+    /**
+     * Get pi4_bahasa
+     *
+     * @return string 
+     */
+    public function getPi4Bahasa()
+    {
+        return $this->pi4_bahasa;
+    }
+
+    /**
+     * Set pi4_nilai_bicara
+     *
+     * @param integer $pi4NilaiBicara
+     */
+    public function setPi4NilaiBicara($pi4NilaiBicara)
+    {
+        $this->pi4_nilai_bicara = $pi4NilaiBicara;
+    }
+
+    /**
+     * Get pi4_nilai_bicara
+     *
+     * @return integer 
+     */
+    public function getPi4NilaiBicara()
+    {
+        return $this->pi4_nilai_bicara;
+    }
+
+    /**
+     * Set pi4_nilai_membaca
+     *
+     * @param integer $pi4NilaiMembaca
+     */
+    public function setPi4NilaiMembaca($pi4NilaiMembaca)
+    {
+        $this->pi4_nilai_membaca = $pi4NilaiMembaca;
+    }
+
+    /**
+     * Get pi4_nilai_membaca
+     *
+     * @return integer 
+     */
+    public function getPi4NilaiMembaca()
+    {
+        return $this->pi4_nilai_membaca;
+    }
+
+    /**
+     * Set pi4_nilai_menulis
+     *
+     * @param integer $pi4NilaiMenulis
+     */
+    public function setPi4NilaiMenulis($pi4NilaiMenulis)
+    {
+        $this->pi4_nilai_menulis = $pi4NilaiMenulis;
+    }
+
+    /**
+     * Get pi4_nilai_menulis
+     *
+     * @return integer 
+     */
+    public function getPi4NilaiMenulis()
+    {
+        return $this->pi4_nilai_menulis;
+    }
+
+    public function __construct()
+    {
+        //$this->pegawai = new ArrayCollection();
+    }
+
+}

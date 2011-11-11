@@ -19,7 +19,7 @@
     <tbody>
 {% for peg in pegawais %}
         <tr>
-            <td><a href="{{ path("zk_employee_employee_update", {"id": peg.id}) }}">{{ peg.piNo }}</a></td>
+            <td><a href="{{ path("zk_employee_employee_update", {"id": peg.id }) }}">{{ peg.piNo }}</a></td>
             <td>{{ peg.piNamaLengkap }}</td>
             <td></td>
             <td>{{ peg.piJenisKelamin }} / {{ peg.piStatusNikah }}</td>

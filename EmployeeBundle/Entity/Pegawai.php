@@ -22,6 +22,14 @@ class Pegawai
     protected $id;
 
     /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     * 
+     * @ORM\OneToMany(targetEntity="Pegawai_Info_Keluarga", mappedBy="pegawai", cascade={"persist"})
+     * @Assert\NotBlank()
+     */
+    protected $pegawai_info_keluarga;
+
+    /**
      * @ORM\Column(type="string" , length="6", unique=true)
      *
      * @var string $pi_no
@@ -776,4 +784,23 @@ class Pegawai
         $this->piLastupdatedByAccount= 'neki';
     }
 
+    /**
+     * Add pegawai_info_keluarga
+     *
+     * @param ZK\EmployeeBundle\Entity\Pegawai_Info_Keluarga $pegawaiInfoKeluarga
+     */
+    public function addPegawai_Info_Keluarga(\ZK\EmployeeBundle\Entity\Pegawai_Info_Keluarga $pegawaiInfoKeluarga)
+    {
+        $this->pegawai_info_keluarga[] = $pegawaiInfoKeluarga;
+    }
+
+    /**
+     * Get pegawai_info_keluarga
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getPegawaiInfoKeluarga()
+    {
+        return $this->pegawai_info_keluarga;
+    }
 }
