@@ -7,7 +7,7 @@ use
     Symfony\Component\Form\FormBuilder
 ;
 
-class EmployeeInfoBahasaType extends AbstractType
+class PegawaiInfoBahasaType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {

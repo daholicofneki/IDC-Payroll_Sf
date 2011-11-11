@@ -7,7 +7,7 @@ use
     Symfony\Component\Form\FormBuilder
 ;
 
-class EmployeeInfoPendInformalType extends AbstractType
+class PegawaiInfoPendInformalType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {

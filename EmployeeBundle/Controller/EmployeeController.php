@@ -11,22 +11,22 @@ use
 
 use
     ZK\EmployeeBundle\Entity\Pegawai,
-    ZK\EmployeeBundle\Form\EmployeeType,
+    ZK\EmployeeBundle\Form\PegawaiType,
 
     ZK\EmployeeBundle\Entity\Pegawai_Info_Keluarga,
-    ZK\EmployeeBundle\Form\EmployeeInfoKeluargaType,
+    ZK\EmployeeBundle\Form\PegawaiInfoKeluargaType,
 
     ZK\EmployeeBundle\Entity\Pegawai_Info_Pendidikan_Formal,
-    ZK\EmployeeBundle\Form\EmployeeInfoPendFormalType,
+    ZK\EmployeeBundle\Form\PegawaiInfoPendFormalType,
 
     ZK\EmployeeBundle\Entity\Pegawai_Info_Pendidikan_Informal,
-    ZK\EmployeeBundle\Form\EmployeeInfoPendInformalType,
+    ZK\EmployeeBundle\Form\PegawaiInfoPendInformalType,
 
     ZK\EmployeeBundle\Entity\Pegawai_Info_Bahasa,
-    ZK\EmployeeBundle\Form\EmployeeInfoBahasaType,
+    ZK\EmployeeBundle\Form\PegawaiInfoBahasaType,
 
     ZK\EmployeeBundle\Entity\Pegawai_Info_Pekerjaan,
-    ZK\EmployeeBundle\Form\EmployeeInfoPekerjaanType
+    ZK\EmployeeBundle\Form\PegawaiInfoPekerjaanType
 ;
 
 /**
@@ -44,7 +44,7 @@ class EmployeeController extends Controller
         $em = $this->getDoctrine()->getEntityManager();
         $pegawai = new Pegawai();
 
-        $form = $this->createForm(new EmployeeType(), $pegawai);
+        $form = $this->createForm(new PegawaiType(), $pegawai);
 
         $request = $this->getRequest();
 
@@ -78,7 +78,7 @@ class EmployeeController extends Controller
 
         $pegawai = $em->find('ZKEmployeeBundle:Pegawai', $id);
 
-        $form = $this->createForm(new EmployeeType(), $pegawai);
+        $form = $this->createForm(new PegawaiType(), $pegawai);
 
         $request = $this->getRequest();
 
@@ -111,23 +111,23 @@ class EmployeeController extends Controller
         switch ($info) {
             case 2:
                 $detail = new Pegawai_Info_Keluarga();
-                $form = $this->createForm(new EmployeeInfoKeluargaType(), $detail);
+                $form = $this->createForm(new PegawaiInfoKeluargaType(), $detail);
                 break;
             case 3:
                 $detail = new Pegawai_Info_Pendidikan_Formal();
-                $form = $this->createForm(new EmployeeInfoPendFormalType(), $detail);
+                $form = $this->createForm(new PegawaiInfoPendFormalType(), $detail);
                 break;
             case 4:
                 $detail = new Pegawai_Info_Pendidikan_Informal();
-                $form = $this->createForm(new EmployeeInfoPendInformalType(), $detail);
+                $form = $this->createForm(new PegawaiInfoPendInformalType(), $detail);
                 break;
             case 5:
                 $detail = new Pegawai_Info_Bahasa();
-                $form = $this->createForm(new EmployeeInfoBahasaType(), $detail);
+                $form = $this->createForm(new PegawaiInfoBahasaType(), $detail);
                 break;
             case 6:
                 $detail = new Pegawai_Info_Pekerjaan();
-                $form = $this->createForm(new EmployeeInfoPekerjaanType(), $detail);
+                $form = $this->createForm(new PegawaiInfoPekerjaanType(), $detail);
                 break;
         }
 
