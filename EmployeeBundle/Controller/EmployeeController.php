@@ -50,7 +50,6 @@ class EmployeeController extends Controller
 
         if ('POST' === $request->getMethod()) {
             $form->bindRequest($request);
-
             if ($form->isValid()) {
                 $em->persist($pegawai);
                 $em->flush();
@@ -68,15 +67,15 @@ class EmployeeController extends Controller
     }
 
     /**
-     * @Route("/update/{id}", name="zk_employee_employee_update")
+     * @Route("/update/{pegawai}", name="zk_employee_employee_update")
      * @Template()
      */
-    public function updateAction($id)
+    public function updateAction($pegawai)
     {
 
         $em = $this->getDoctrine()->getEntityManager();
 
-        $pegawai = $em->find('ZKEmployeeBundle:Pegawai', $id);
+        $pegawai = $em->find('ZKEmployeeBundle:Pegawai', $pegawai);
 
         $form = $this->createForm(new PegawaiType(), $pegawai);
 
@@ -89,7 +88,7 @@ class EmployeeController extends Controller
                 $em->persist($pegawai);
                 $em->flush();
 
-                return $this->redirect($this->generateUrl('zk_employee_employee_update', array('id' => $id)));
+                return $this->redirect($this->generateUrl('zk_employee_employee_update', array('pegawai' => $pegawai)));
             }
         }
 
@@ -100,10 +99,10 @@ class EmployeeController extends Controller
     }
 
     /**
-     * @Route("/detail/{id}/{info}/{height}/{width}", name="zk_employee_employee_detail")
+     * @Route("/detail/{pegawai}/{info}/{height}/{width}", name="zk_employee_employee_detail")
      * @Template()
      */
-    public function detailAction($id, $info, $height, $width)
+    public function detailAction($pegawai, $info, $height, $width)
     {
 
         $em = $this->getDoctrine()->getEntityManager();
@@ -147,7 +146,7 @@ class EmployeeController extends Controller
         return array(
             'form'  => $form->createView(),
             'detail' => $detail,
-            'id' => $id,
+            'pegawai' => $pegawai,
             'info' => $info,
             'height' => $height,
             'width' => $width,

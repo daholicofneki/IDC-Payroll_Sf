@@ -20,8 +20,13 @@ class PegawaiInfoPekerjaanType extends AbstractType
         #$builder->add('pegawai', new PegawaiType());
     }
 
+    public function getDefaultOptions(array $options)
+    {
+        #return array('data_class' => 'ZK\EmployeeBundle\Entity\employee');
+    }
+
     public function getName()
     {
-        return 'employee';
+        return 'pegawai_info_pekerjaan';
     }    
 }

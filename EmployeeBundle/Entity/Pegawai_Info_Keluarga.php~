@@ -212,7 +212,26 @@ class Pegawai_Info_Keluarga
 
     public function __construct()
     {
-        $this->pegawais = new ArrayCollection();
+        //$this->pegawai = new ArrayCollection();
     }
 
+    /**
+     * Set pegawai
+     *
+     * @param ZK\EmployeeBundle\Entity\Pegawai $pegawai
+     */
+    public function setPegawai(\ZK\EmployeeBundle\Entity\Pegawai $pegawai)
+    {
+        $this->pegawai = $pegawai;
+    }
+
+    /**
+     * Get pegawai
+     *
+     * @return ZK\EmployeeBundle\Entity\Pegawai 
+     */
+    public function getPegawai()
+    {
+        return $this->pegawai;
+    }
 }

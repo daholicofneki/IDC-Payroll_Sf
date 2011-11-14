@@ -212,7 +212,7 @@ class Pegawai_Info_Keluarga
 
     public function __construct()
     {
-        //$this->pegawai = new ArrayCollection();
+        
     }
 
     /**

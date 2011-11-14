@@ -21,7 +21,7 @@
 		$(".date").datepicker({
 			changeMonth: true,
 			changeYear: true,
-			dateFormat: 'yy-mm-dd',
+			dateFormat: 'dd/mm/yy',
 			minDate: '-100y',
 			maxDate: '-15y',
 			showAnim: 'fold'
@@ -153,7 +153,7 @@
 				<th>Hubungan</th>
 				<th>Pendidikan</th>
 				<th>Pekerjaan</th>
-				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"id": pegawai.id, "info":2, "height":400, "width":320}) }}" class="thickbox"  title="Informasi Keluarga">+</a></th>
+				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"pegawai": pegawai.id, "info":2, "height":400, "width":320}) }}" class="thickbox"  title="Informasi Keluarga">+</a></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -170,7 +170,7 @@
 				<th>Tahun Lulus</th>
 				<th>Jurusan</th>
 				<th>Sertifikat</th>
-				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"id": pegawai.id, "info":3, "height":400, "width":320}) }}" class="thickbox"  title="Informasi Pendidikan Formal">+</a></th>
+				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"pegawai": pegawai.id, "info":3, "height":400, "width":320}) }}" class="thickbox"  title="Informasi Pendidikan Formal">+</a></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -186,7 +186,7 @@
 				<th>Lembaga</th>
 				<th>Kualifikasi</th>
 				<th>Tahun</th>
-				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"id": pegawai.id, "info":4, "height":400, "width":320}) }}" class="thickbox" title="Informasi Pendidikan Informal">+</a></th>
+				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"pegawai": pegawai.id, "info":4, "height":400, "width":320}) }}" class="thickbox" title="Informasi Pendidikan Informal">+</a></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -202,7 +202,7 @@
 				<th>Nilai Bicara</th>
 				<th>Nilai Membaca</th>
 				<th>Nilai Menulis</th>
-				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"id": pegawai.id, "info":5, "height":400, "width":320}) }}" class="thickbox" title="Informasi Bahasa">+</a></th>
+				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"pegawai": pegawai.id, "info":5, "height":400, "width":320}) }}" class="thickbox" title="Informasi Bahasa">+</a></th>
 			</tr>
 			</thead>
 			<tbody>
@@ -220,7 +220,7 @@
 				<th>Jabatan</th>
 				<th>Pekerjaan</th>
 				<th>Gaji</th>
-				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"id": pegawai.id, "info":6, "height":400, "width":320}) }}" class="thickbox" title="Informasi Riwayat Pekerjaan">+</a></th>
+				<th width="10px"><a href="{{ path("zk_employee_employee_detail", {"pegawai": pegawai.id, "info":6, "height":400, "width":320}) }}" class="thickbox" title="Informasi Riwayat Pekerjaan">+</a></th>
 			</tr>
 			</thead>
 			<tbody>
